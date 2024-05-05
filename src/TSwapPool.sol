@@ -110,10 +110,17 @@ contract TSwapPool is ERC20 {
     /// @param maximumPoolTokensToDeposit The maximum amount of pool tokens the user is willing to deposit, again it's
     /// derived from the amount of WETH the user is going to deposit
     /// @param deadline The deadline for the transaction to be completed by
+
+    // @audit-q if it's empty, how does it warm up?
     function deposit(
         uint256 wethToDeposit,
         uint256 minimumLiquidityTokensToMint,
         uint256 maximumPoolTokensToDeposit,
+        // @written - high! deadline is not being used
+        // if someone sets a deadline, say, next block
+        // they could still deposit!!!
+        // IMPACT: HIGH a user who expects a deposit to fail, will go throgh
+        // Likelihood: HIGH ALWAYS the case!
         uint64 deadline
     )
         external
@@ -363,6 +370,7 @@ contract TSwapPool is ERC20 {
     function sellPoolTokens(
         uint256 poolTokenAmount
     ) external returns (uint256 wethAmount) {
+        // @written swapExactInput function should be used instead
         return
             swapExactOutput(
                 i_poolToken,

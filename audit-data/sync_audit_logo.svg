@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#3498db"/>
+  
+  <!-- Letter S -->
+  <path d="M50,50 C70,30 130,30 150,50 L130,80 C110,60 90,60 70,80 Z" fill="#fff"/>
+  
+  <!-- Letter A -->
+  <polygon points="80,120 100,90 120,120" fill="#fff"/>
+  <path d="M90,120 L90,150 L110,150 L110,120 Z" fill="#fff"/>
+  
+  <!-- Letter S -->
+  <path d="M140,120 C160,100 180,100 200,120 L180,150 C160,130 140,130 120,150 Z" fill="#fff"/>
+  
+  <!-- Letter A -->
+  <polygon points="160,120 180,90 200,120" fill="#fff"/>
+  <path d="M170,120 L170,150 L190,150 L190,120 Z" fill="#fff"/>
+</svg>
